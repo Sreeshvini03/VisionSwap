@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/styles.css">
+    <title>visionSwap</title>
+    <style>
+        .btn-signup,
+        .btn-login {
+            background-color: #fff;
+            color: #3498db;
+        }
+        .user-image {
+            object-fit: cover; 
+            width: 100%; 
+            height: auto; 
+            max-height: 300px; 
+            height: 100vh;
+        }
+        #search-form {
+            display: flex;
+            justify-content: center;
+            margin-top: 0.2rem;
+            width: 60%;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="/homePage">Vision Swap</a>
+            
+
+            <form id="search-form" class="navbar-brand" action="/search" method="post">
+                <input class="form-control center search-input" type="search" name="q" placeholder="Search for a skill" aria-label="Search">
+                <button type="submit" class="btn btn-primary btn-vision submit-search">Search</button>
+            </form> 
+            </div>
+                <div class="navbar-container">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/homePage">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link about" href="/about">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="jumbotron bg-transparent">
+            <h1 class="display-4">Connect, Learn, and Grow Together</h1>
+            <% if (loggedInUser) { %>
+            <h2><span class="nav-link">Welcome, <%= loggedInUser.name %>!</span></h2>
+            <form action="/logout" method="POST">
+                <p class="lead">
+                <button type="submit" class="btn btn-primary btn-lg btn-signup" role="button">Logout</button>
+                </p>
+            </form>
+    <% } else { %>
+            <p class="lead">Join visionSwap to enhance your skills and connect with like-minded individuals.</p>
+            <hr class="my-4">
+            <p>Sign up or log in to get started!</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg btn-signup" href="#" role="button">Sign Up</a>
+                <a class="btn btn-primary btn-lg btn-login" href="#" role="button">Log In</a>
+            </p>
+            <% } %>
+        </div>
+    </header>
+
+    <section class="container ">
+        <div class="row">
+                <div class=" card-body review-box">
+                    <h2>Connect with Others</h2>
+                    <div class=" card-body review-box">
+                        <div class="card-body review-box row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 row-cols-xs-5">
+                            
+                            <% if (searchResults !== null) { %>
+                                
+                                <% if (searchResults && searchResults.length > 0) { %>
+                                    
+                                    <% searchResults.forEach(user => { %>
+                                        
+                                        <div class="  col-md-30 userCard" style="width: 45rem">
+                                            <img src="<%=user.image%>" class="card-image-top user-image" alt="error in loading img">
+                                            
+                                            <h4><b>@<%= user.name %></b></h4>
+                                            <b><p>Skills Needed: </b><%= user.skills_needed.join(", ") %></p>
+                                            <b><p>Certified in: </b><%= user.certified_in.join(", ") %></p>
+                                            <b><p>Current Job:</b><%= user.currentJob %></p>
+                                            <b><p>Email:</b><%= user.email %></p>
+                                            <button class="btn btn-primary btn-vision">Connect</button>
+                                            <br><br><br>
+                                        </div>
+                                            
+                                    <% }); %>
+                                <% } else { %>
+
+                                    <p>No users found matching the search criteria.</p>
+                                <% } %>
+                            <% } else { %>
+                               
+                                <% for(let user of allUsers) { %>
+                                    <div class="  col-md-30 userCard" style="width: 45rem">
+                                        <img src="<%=user.image%>" class="card-image-top user-image" alt="error in loading img">
+                                        
+                                        <h4><b>@<%= user.name %></b></h4>
+                                        <b><p>Skills Needed: </b><%= user.skills_needed.join(", ") %></p>
+                                        <b><p>Certified in: </b><%= user.certified_in.join(", ") %></p>
+                                        <b><p>Current Job:</b><%= user.currentJob %></p>
+                                        <b><p>Email:</b><%= user.email %></p>
+                                        <button class="btn btn-primary btn-vision">Connect</button>
+                                        <br><br><br>
+                                    </div>
+                                    <% } %>
+                            <% } %>
+                            
+
+                        </div>
+                    </div>
+            <div class="col-md-30  ">
+                <section class="user-reviews card-body card review-box">
+                    <h2>What Visioners Say..</h2>
+                    <br><br><br>
+                    <% const reviews = [
+                        { username: "@Jane Doe", role: "Web Developer", comment: "visionSwap is an amazing platform to connect with mentors and learn new skills. Highly recommended!" },
+                        { username: "@John Smith", role: "Software Engineer", comment: "I found my coding buddy on visionSwap, and together we've achieved great things!" },
+                        { username: "@Alice Johnson", role: "UX Designer", comment: "The platform helped me expand my network and collaborate on interesting projects." },
+                        { username: "@Bob Williams", role: "Data Scientist", comment: "Connecting with like-minded individuals has been a game-changer for my career." },
+                        { username: "@Eva Davis", role: "Marketing Specialist", comment: "VisionSwap has a diverse community, making it easy to find partners with different skills." }
+                    ]; %>
+
+                    <% reviews.forEach(review => { %>
+                        <div class="review">
+                            <h4><b><%= review.username %></b></h4>
+                            <p><i><%= review.role %></i></p>
+                            <p><%= review.comment %></p>
+                        </div>
+                    <% }); %>
+                </section>
+            </div>
+        </div>
+    </section>
+
+    
+    <br><br><br>
+    <footer class="bg-dark text-light text-center py-3">
+        <div class="connect-with-us">
+            <h2>Connect with Us:</h2>
+            <a href="#" class=" btn-outline-info"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="#" class=" btn-outline-info"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <br><br>
+            <p>&copy; 2024 visionSwap. All rights reserved.</p>
+        </div>
+        
+   
+    </footer>
+    
+    
+    
+
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit-id.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-gDkVbLBAh5M17uF5KJqg5Y06oIJMG2j3ScO+sw6U4T8xZHf6e5SHG3fiYp3MRlE4"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy8pDlIZbNlB/6XsW8TwWfgIg9l6h5H1Fq"
+        crossorigin="anonymous"></script>
+    <script src="app.js">
+        
+    </script>
+
+    <script>
+        
+    
+        let sinUp = document.querySelector(".btn-signup");
+        sinUp.addEventListener("click", () => {
+            // Redirect to the signup page
+            window.location.href = "/signup";
+        });
+    
+        let logn = document.querySelector(".btn-login");
+        logn.addEventListener("click", () => {
+            // Redirect to the signup page
+            window.location.href = "/login";
+        });
+    
+        let about = document.querySelector(".about");
+        about.addEventListener("click",() => {
+            window.location.href = "/about";
+        })
+    
+        let contactUs = document.querySelector(".contact");
+        contactUs.addEventListener("click",() => {
+            window.location.href = "/contact";
+        });
+    </script>
+    </body>
+    
+    </html>
+    
+</body>
+
+
+
+       
+
+
+   
+    
+</body>
+
+</html>

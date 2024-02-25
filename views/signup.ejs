@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Signup</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+        a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration:none; 
+    cursor:pointer;  
+}
+    </style>
+</head>
+<body>
+    <h1 class="custom-margin-top mt-3 text-center" style="color: #3498db"><a href="/homePage">VisionSwap</a></h1>
+
+    <div class="container mt-1">
+        <form action="/signup" method="POST" >
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Please provide your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="image">Image Link:</label>
+                <input type="url" class="form-control" id="image" name="image" placeholder="Please paste your image address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="skills">Skills in Need:</label>
+                <input type="text" class="form-control" id="skills" name="skills" placeholder="Mention the skills you need, comma-separated" required>
+            </div>
+
+            <div class="form-group">
+                <label for="certified">Certified In:</label>
+                <input type="text" class="form-control" id="certified" name="certified" placeholder="ex: JavaScript" required>
+            </div>
+
+            <div class="form-group">
+                <label for="currentJob">Current Job:</label>
+                <input type="text" class="form-control" id="currentJob" name="currentJob"  placeholder="ex: SWE at XYZ" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="ex: example@gmail.com" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password " class="form-control" id="password" name="password"  required>
+            </div><br>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+            <br><br>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

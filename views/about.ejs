@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background-color: #6cb0dd;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        b {
+            color: white;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .team-member img{
+            text-align: center;
+            border: white 2px solid;
+            width: 10rem;
+            height: 15rem;
+            display: flex;
+            /* text-align: center; */
+            align-items: center;
+            align-content: center;
+            background-color: white;
+        }
+        .team-member {
+            text-align: center;
+        }
+        a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration:none; 
+    cursor:pointer;  
+}
+
+        .team-member img {
+            width: 110px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        @media only screen and (max-width: 576px) {
+            .team-members {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .team-member {
+                margin-bottom: 20px;
+            }
+        }
+        .heading {
+            color:  white !important;
+            background-color: white;
+        }
+        .footer
+            {
+                height: 10rem;
+                background-color: black;
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: 100%;
+            }
+    </style>
+</head>
+<body>
+    <span><h1 class="heading mt-3 text-center"><a href="/homePage">VisionSwap</a></h1></span>
+
+    <div class="container">
+        <h2 class="mt-4 mb-4"><b>About the website</b></h2>
+
+        <p>VisionSwap Network is a versatile platform designed to facilitate skill exchange among individuals with complementary abilities. Users can list the skills they possess and those they aim to acquire, fostering a collaborative environment for mutual learning.</p>
+
+        <p>The website employs a sophisticated matching algorithm to connect users based on their skills and learning goals. One notable feature is the incorporation of a skill auction system, allowing users to bid their skills for learning opportunities. The platform supports a diverse range of technical skills such as JavaScript, Python, cybersecurity, data science, and more.</p>
+
+        <h4 class="mt-4"><b>Advantages</b></h4>
+        <p>Advantages of VisionSwap Network include its personalized matching system, enabling users to find suitable skill exchange partners efficiently. The platform's emphasis on security and privacy controls ensures a safe environment for users to collaborate and share knowledge. VisionSwap Network stands out for its commitment to fostering a dynamic and inclusive community where users can not only exchange skills but also participate in events and challenges.</p>
+
+        <p>Users should be aware of the platform's rating and review system, which enhances transparency and builds credibility within the community. Furthermore, the integration of a virtual marketplace allows users to explore trending skills for exchange. VisionSwap Network's commitment to user education is evident through resources such as tutorials, webinars, and articles, providing valuable learning content.</p>
+
+        <p>In summary, VisionSwap Network offers a unique and interactive approach to skill exchange, promoting continuous learning and collaboration in a user-friendly and secure online environment.</p>
+        <h2>Founders</h2>
+        <br>
+        <div class="team-members" >
+            <div class="team-member">
+                <a href="https://www.linkedin.com/in/leena-sathvika-kancharla-20b507292?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                <img src="sathvika.jpeg" alt="Member 1">
+                <p><b>Sathvika</b>&nbsp;<i style="color: #076ba1; " class="fa-brands fa-linkedin"></i></p></a>
+                <p style="line-height: 1px;">Frontend</p>
+            </div>
+            <div class="team-member" >
+                <a href="https://www.linkedin.com/in/priyanka-rao-086a88285?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">
+                <img src="priyanka.jpeg" >
+                <p><b>Priyanka</b>&nbsp;<i style="color: #076ba1; " class="fa-brands fa-linkedin"></i></p></a>
+                <p style="line-height: 1px;">Frontend</p>
+            </div>
+            <div class="team-member">
+                <a href="https://www.linkedin.com/in/ragam-sreeshvini-634868281/">
+                <img src="sreeshvini.jpeg" alt="Member 3">
+                <p><b>Sreeshvini</b>&nbsp;<i style="color: #076ba1; " class="fa-brands fa-linkedin"></i></p></a>
+                <p style="line-height: 1px; ;">Backend</p></a>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+    <footer class="bg-dark text-light text-center py-3 footer">
+        <div class="connect-with-us">
+            <h2>Connect with Us:</h2>
+            <a href="#" class=" btn-outline-info"><i class="fab fa-instagram"></i> Instagram &nbsp;</a>
+            <a href="#" class=" btn-outline-info"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <br><br>
+            <p>&copy; 2024 visionSwap. All rights reserved.</p>
+        </div>
+        
+   
+    </footer>
+    <script>app.use(express.static('public'));</script>
+    
+</body>
+</html>

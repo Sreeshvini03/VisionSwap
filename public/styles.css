@@ -1,0 +1,247 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    padding: 20px;
+}
+
+.user-profiles,
+.connect-form,
+.users,
+.skills {
+    width: 100%;
+}
+
+.user-profile,
+.connect-form,
+.skills-list,
+.user {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.users {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.user {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.skills-list {
+    display: flex;
+    justify-content: center;
+}
+
+.skills-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-list ul li {
+    margin: 5px 0;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 2rem;
+}
+
+.connect-with-us {
+    padding: 20px;
+    text-align: center;
+}
+
+.connect-with-us a {
+    margin: 0 10px;
+}
+
+.signup-login {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-vision {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+}
+
+.review-box {
+    background-color: #d8ebf9;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 2%;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.userCard {
+    border: none !important;
+    margin-bottom: 1rem;
+    padding: 0.8rem;
+    width: 100%;
+}
+
+.card-image-top {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+@media only screen and (max-width: 576px) {
+    .mx-auto.col-5 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .mx-auto.col-5 input,
+    .mx-auto.col-5 button {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 5px 0;
+    }
+
+    .jumbotron {
+        padding: 20px;
+    }
+
+    .navbar-brand {
+        margin-right: 0 !important;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar-nav a {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .about,
+    .contact {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+.navbar-container {
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 576px) {
+    .userCard {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .userCard img {
+        margin-bottom: 10px; 
+    }
+
+    .userCard p,
+    .userCard button {
+        width: 100%;
+        box-sizing: border-box;
+        margin: 5px 0;
+    }
+    .navbar-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .navbar-nav {
+        margin-top: 10px;
+        text-align: center;
+    }
+    h2,.user-reviews .review {
+        text-align: center;
+    }
+
+    /* Footer */
+    .connect-with-us {
+        text-align: center;
+    }
+    footer {
+        padding: 2rem; 
+    }
+
+    .footer-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+
+
+/* Small Desktop */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .mx-auto.col-5 input,
+    .mx-auto.col-5 button {
+        width: 70%;
+        box-sizing: border-box;
+        margin: 5px 0;
+    }
+
+    .navbar-container {
+        flex-direction: row;
+    }
+
+    .navbar-nav {
+        margin-top: 0;
+        text-align: center;
+    }
+}
+
+/* Medium Desktop and above */
+@media only screen and (min-width: 992px) {
+    .mx-auto.col-5 input,
+    .mx-auto.col-5 button {
+        width: 60%;
+        box-sizing: border-box;
+        margin: 5px 0;
+    }
+
+    .navbar-container {
+        flex-direction: row;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+}
+
